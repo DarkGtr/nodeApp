@@ -22,7 +22,7 @@ http.createServer(function(request, response) {
             //HURRAY!! We are connected. :)
             response.write('Connection established to' + url + "\n");
             var collection = db.collection('users');
-            var results = collection.find({age: {$lte:30}});
+            var results = collection.find({age: {$lte:70}});
 
             results.each(function (err, result) {
                 if (err) {
