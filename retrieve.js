@@ -28,19 +28,19 @@ http.createServer(function(request, response) {
                     if (err) {
                         response.write(err);
                     } else {
-                        response.write('Fetched: ' + result.name + " : " + result.age + " : " +
-                        result.roles.toString() + '\n');
+                        response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
                     }
                     if (result == null) {
-                        response.end('Completed');
                         db.close();
+                        response.end('Completed');
+
                     }
                 });
 
             //Done Close connection
-            db.close();
+           // db.close();
         }
-        response.end('Finished, Connection closed \n');
+        //response.end('Finished, Connection closed \n');
     });
 
 }).listen(port);
