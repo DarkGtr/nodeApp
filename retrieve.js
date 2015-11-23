@@ -20,29 +20,29 @@ http.createServer(function(request, response) {
             db.close();
         } else {
             //HURRAY!! We are connected. :)
-            response.write('Connection established to' + url +"\n");
-                var collection = db.collection('users');
-                var results = collection.find({name: 'modulus user'});
+            response.write('Connection established to' + url + "\n");
+            var collection = db.collection('users');
+            var results = collection.find({name: 'modulus user'});
 
-                results.each(function (err, result){
-                    if (err) {
-                        response.write(err);
-                    } else {
-                        response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
-                    }
-                    if (result == null) {
-                        response.end('Completed');
-                        db.close();
-                    }
-                });
-
-            //Done Close connection
-            db.close();
-        response.end('Finished, Connection closed \n');
+            results.each(function (err, result) {
+                if (err) {
+                    response.write(err);
+                } else {
+                    response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
+                }
+                if (result == null) {
+                    response.end('Completed');
+                    db.close();
+                }
+                db.close();
+                response.end('Finished, Connection closed \n');
+            });
+            //Done Close connectio
         }
-    });
+     });
 
 }).listen(port);
+
 
 
 
