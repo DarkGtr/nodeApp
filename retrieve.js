@@ -31,16 +31,14 @@ http.createServer(function(request, response) {
                         response.write('Fetched: ' + result.name + " : " + result.age + " : " + result.roles.toString() + '\n');
                     }
                     if (result == null) {
-                        db.close();
                         response.end('Completed');
-
+                        db.close();
                     }
                 });
 
-            //Done Close connection
-           // db.close();
+            //Done Close connecti
         }
-        //response.end('Finished, Connection closed \n');
+        response.end('Finished, Connection closed \n');
     });
 
 }).listen(port);
