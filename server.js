@@ -32,6 +32,3 @@ console.log("Server is listening");*/
 //require('./retrieve');
 require('./twittertest');
 
-client.get('search/tweets', {q: 'lolcat'}, function(error, tweets){
-    console.log(tweets);
-});

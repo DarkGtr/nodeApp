@@ -9,5 +9,7 @@ var client = new Twitter ({
     access_token_secret: 'UzCAMrmrxIgv79KZfQVYVf5coump0SIDyhcRuI8MT29Nc'
 })
 
-
+client.get('search/tweets', {q: 'lolcat'}, function(error, tweets){
+    console.log(tweets);
+});
 
